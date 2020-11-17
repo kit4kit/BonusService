@@ -1,5 +1,6 @@
 package ru.netology.bonus;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -25,6 +26,7 @@ class BonusServiceTest {
   }
 
   @ParameterizedTest
+  @DisplayName("registered user, bonus under limit")
   @CsvFileSource(resources = "/data.csv")
   void CalculateCsvFileSource(long amount, boolean registered, long expected){
     BonusService service = new BonusService();
