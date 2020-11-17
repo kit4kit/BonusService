@@ -26,9 +26,8 @@ class BonusServiceTest {
   }
 
   @ParameterizedTest
-  @DisplayName("registered user, bonus under limit")
   @CsvFileSource(resources = "/data.csv")
-  void CalculateCsvFileSource(long amount, boolean registered, long expected){
+  void CalculateCsvFileSource(String test, long amount, boolean registered, long expected){
     BonusService service = new BonusService();
     long actual = service.calculate(amount, registered);
     assertEquals(expected, actual);
